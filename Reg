@@ -1,0 +1,96 @@
+<!DOCTYPE html>    
+<html>    
+<head>    
+    <title>Registration Form</title>   
+    
+</head> 
+<body>  
+    <script>
+        function validateform(){
+            var name = document.myform.name.value ;
+            var uname = document.myform.uname.value ;
+            var age = document.myform.age.value ;
+            var mobile = document.myform.mobile.value ;
+            if (name==null || name=="")
+            {
+                alert("Name Cant be blank");
+                return false
+            }
+            else if(uname==null || uname=="")
+            {
+                alert("User Name Cant be blank");
+                return false
+            }
+            if(mobile.length==10)
+            {
+                return true
+            }
+            else{
+                alert("Enter Correct Mobile Number");
+                return false
+                }
+                if(isNAN(age)||age<18 || age>60 || age==null || age=="")
+            {
+                return true
+            }
+            else{
+                alert("Only age between 18 and 60 is allowed");
+                return false
+                }
+            
+      }
+    </script> 
+<body>    
+    <center><h1>Resgistration Form</h1></center>    
+    <hr>    
+    <form method="post" action="hi.php" name="myform" onsubmit="return validateform()">    
+         
+        <table>    
+            <tr>    
+                <td><label> Name: </label></td>    
+                <td>    
+                    <input type="text" name="name" placeholder="Name">    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>User Name: </label></td>    
+                <td>    
+                    <input type="text" size ="7" name="uname" placeholder="User Name">    
+                </td>    
+            </tr>     
+            <tr>    
+                <td><label>Age: </label></td>    
+                <td>    
+                    <input type="number" name="age" placeholder="age">    
+                </td>    
+            </tr>  
+            <tr>    
+                <td><label>Gender: </label></td>    
+                <td>    
+                    <input type="radio" name="gender" value="male">Male    
+                    <input type="radio" name="gender" value="female">Female    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>Email Id: </label></td>    
+                <td>    
+                    <input type="text" name="email" placeholder="example@gmail.com">    
+                </td>    
+            </tr>    
+            <tr>    
+                <td><label>Mobile: </label></td>    
+                <td>    
+                    <input type="number" size = "10" name="mobile" placeholder="mobile number">   
+                </td>    
+            </tr>    
+            <tr>       
+                <td>    
+                    <input type="submit" name="submit" value="Submit">    
+                    <input type="reset" name="reset" value="Reset">    
+                </td>    
+            </tr>             
+        </table>    
+    </form>    
+    </script>
+</body>    
+</html> 
